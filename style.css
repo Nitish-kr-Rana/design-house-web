@@ -1,0 +1,219 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    --drak-green:green;
+}
+:root{
+    /* --drak-red:red; */
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    border: 2px solid var(--drak-red);
+    background-image: linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.85)), url(hotal\ image.jpg);
+    background-size: cover;
+    background-position: center;
+}
+nav .logo{
+    font-size: 30px;
+    color: whitesmoke;
+    border: 2px solid var(--drak-red);
+    
+    /* padding: 0.5em 2.5em; */
+}
+nav{
+    display:flex; 
+    justify-content: space-between;
+    text-decoration: none;
+    padding: 1.74em 2.5em;
+    border: 2px solid var(--drak-red);
+    
+}
+nav ul li {
+    list-style: none;
+    display: inline-block;
+    text-decoration: none;
+    border: 2px solid var(--drak-red);
+    margin: 0 15px;
+    position: relative; 
+}
+nav ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background-color: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+
+}
+nav ul li:hover::after{
+    width: 100%;
+}
+nav ul li a{
+    color: whitesmoke;
+    border: 4px;
+    text-transform: uppercase;
+}
+.containe2{
+    width: 100%;
+    padding: 0 3.5em;
+    display: flex;
+    border: 2px solid var(--drak-red);
+    justify-content: center;
+    align-items: center;
+}
+.design{
+    width: 100%;
+    position: absolute;
+    border: 2px solid var(--drak-red);
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+.design h1{
+    font-size: 50px;
+    margin-top: 80px;
+}.design p{
+    text-align: center;
+    color: white;
+    line-height: 25px;
+    font-weight: 100;
+    margin: 20px auto;
+}
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    background: transparent;
+    border: 2px solid #009688;
+    color: #fff;
+    cursor:pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+button::before{
+    content: "";
+    position: absolute;
+    background-color: #009688;
+    border-radius: 25px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 1s;
+    z-index: -1;
+
+}
+button:hover::before{
+    transform: scaleX(1);
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #fff;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+
+@media (max-width:832px){
+    label.logo{
+        font-size: 20px;
+    }
+    ul li a{
+        font-size: 10px;
+    }
+}
+@media (max-width:637px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 8vh;
+        background: #2c3e50;
+        left: 0;
+        top: -100%;
+        display: flex;
+        justify-content: center;
+        transition: all 0.5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 10px 0;
+        line-height: 30px;
+
+    }
+    nav ul li a{
+        font-size: 10px;
+        background: #2c3e50;
+        padding: .8em;
+    }
+    .design p{
+        text-align: center;
+        color: white;
+        line-height: 15px;
+        font-weight: 60px;
+        padding: .9em;
+        margin: 20px auto;
+    }
+    #check:checked ~ ul{
+        top: 0;
+        margin-top: 90px;
+    }
+    .containe2{
+    background: url(hotal\ image.jpg);
+    background-size: cover;
+    height: calc(100vh - 80px);
+    }
+}
+@media (max-width:532px){
+    .design{
+        width: 100%;
+        position: absolute;
+        border: 2px solid var(--drak-red);
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        color: #fff;
+    }
+    .design h1{
+        font-size: 35px;
+        margin-top: 50px;
+    }.design p{
+        text-align: center;
+        color: white;
+        line-height: 15px;
+        font-weight: 50;
+        padding: .9em;
+        margin: 10px auto;
+    }
+    .checkbtn{
+        font-size: 25px;
+    }
+}
+@media (max-width:335px){
+    nav ul li a {
+        font-size:6px ;
+    }
+    .checkbtn{
+        font-size: 20px;
+    }
+}
+
